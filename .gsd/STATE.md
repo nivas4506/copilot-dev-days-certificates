@@ -5,7 +5,7 @@
 **Status:** Phase 01 complete — ready for Phase 02
 
 ## Current Phase
-Phase 02: Certificate Rendering — Not Started
+Phase 02: Certificate Rendering — Planned (5 plans ready, 3 waves)
 
 ## Last Completed Phase
 Phase 01: Scaffold & Config System — Complete (2026-04-11)
