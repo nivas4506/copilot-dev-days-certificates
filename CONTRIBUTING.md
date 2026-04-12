@@ -14,6 +14,24 @@ Click **Fork** at the top-right of this page. Work from your fork — do not pus
 
 ### 2. Create your data file
 
+You have two options:
+
+#### Option A (recommended) - Use GitHub Copilot prompt (instant)
+
+1. Open this repo in VS Code (your fork).
+2. Open Copilot Chat.
+3. Run this command:
+
+```text
+/add-certificate "your full name"
+```
+
+4. Provide your registered email when asked.
+5. Copilot will generate exactly one file in `data/` with the correct `certificate_id` and required fixed fields.
+
+<details>
+<summary><strong>Option B - Manual JSON creation (click to expand)</strong></summary>
+
 In your fork, create a new file in `data/` named after your registered email address.
 
 **Email → filename conversion:**
@@ -43,6 +61,8 @@ In your fork, create a new file in `data/` named after your registered email add
 - `certificate_id` must exactly match the filename without `.json`
 - `name`, and `email`,must be your own — do not copy from `sample.json`
 - `workshop`, `date`, `date_iso`  and `description`  must be copied exactly as shown above
+
+</details>
 
 ### 3. Open a Pull Request
 

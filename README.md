@@ -33,38 +33,56 @@ Every attendee gets a unique URL with a QR code. Scanning it opens their certifi
 
 ## Claim Your Certificate
 
-> **Quick start:** Fork → add your JSON file → open a PR → get your certificate URL once merged.
+> **Quick start:** Fork → open Copilot and run `/add-certificate "your full name"` → open a PR → get your certificate URL once merged.
 
 ### Step 1 - Fork this repository
 
 Click **Fork** (top-right of this page) to create a copy under your GitHub account.
 
-### Step 2 - Convert your email to a file ID
+### Step 2 - Create your data file
 
-Your filename must be derived from the email you registered with. Apply these rules in order:
+You have two options:
+
+#### Option A (recommended) - Use GitHub Copilot prompt (instant)
+
+1. Open this repo in VS Code (your fork).
+2. Open Copilot Chat.
+3. Run this command:
+
+```text
+/add-certificate "your full name"
+```
+
+4. Provide your registered email when asked.
+5. Copilot will generate exactly one file in `data/` with the correct `certificate_id` and required fixed fields.
+
+<details>
+<summary><strong>Option B - Manual JSON creation (click to expand)</strong></summary>
+
+In your fork, create a new file in `data/` named after your registered email address.
+
+**Email -> filename conversion:**
 
 | Rule | Example |
 |------|---------|
-| Lowercase everything | `Jane.Doe@Example.com` → `jane.doe@example.com` |
-| Replace `@` with `-at-` | `jane.doe@example.com` → `jane.doe-at-example.com` |
-| Replace every `.` with `-` | `jane.doe-at-example.com` → `jane-doe-at-example-com` |
-| Replace `+` with `-plus-` | `jane+tag@...` → `jane-plus-tag-at-...` |
+| Lowercase everything | `Jane.Doe@Example.com` -> `jane.doe@example.com` |
+| Replace `@` with `-at-` | `jane.doe@example.com` -> `jane.doe-at-example.com` |
+| Replace every `.` with `-` | `jane.doe-at-example.com` -> `jane-doe-at-example-com` |
+| Replace `+` with `-plus-` | `jane+tag@...` -> `jane-plus-tag-at-...` |
 
-**Your filename:** `data/jane-doe-at-example-com.json`
+**File:** `data/jane-doe-at-example-com.json`
 
-### Step 3 - Create your data file
-
-In your fork, navigate to the `data/` folder and create the file from Step 2 with this content:
+Then add this content:
 
 ```json
 {
   "certificate_id": "jane-doe-at-example-com",
   "name": "Jane Doe",
   "email": "jane.doe@example.com",
-  "workshop": "Github Copilot Dev Days 2026 - Microsoft, Hyderabad",
+  "workshop": "Github Copilot Dev Days 2026 - Microsoft, Hyderabad (Learn AI)",
   "date": "April 18, 2026",
   "date_iso": "2026-04-18",
-  "description": "Completed an intensive program on GitHub Copilot, covering Copilot CLI, VS Code, agentic workflows, and building production-grade applications with AI assistance."
+  "description": "Completed an intensive program on learning Github Copilot, customizing Copilot agents, covering Copilot CLI, VS Code, Agentic workflows, and building production-grade application development with Copilot."
 }
 ```
 
@@ -75,20 +93,22 @@ In your fork, navigate to the `data/` folder and create the file from Step 2 wit
 | `certificate_id` | ✅ | Must exactly match your filename without `.json` |
 | `name` | ✅ | Your full name as it should appear on the certificate |
 | `email` | ✅ | The email address you registered with |
-| `workshop` | ✅ | Keep as-is: `Github Copilot Dev Days 2026 - Microsoft, Hyderabad` |
+| `workshop` | ✅ | Keep as-is: `Github Copilot Dev Days 2026 - Microsoft, Hyderabad (Learn AI)` |
 | `date` | ✅ | Keep as-is: `April 18, 2026` |
 | `date_iso` | ✅ | Keep as-is: `2026-04-18` |
 | `description` | ✅ | Keep as-is: `Completed an intensive program on learning Github Copilot, customizing Copilot agents, covering Copilot CLI, VS Code, Agentic workflows, and building production-grade application development with Copilot.` |
 
 > **Note:** Do not copy sample data as-is. Update `certificate_id`, `name`, and `email`, with your own details.
 
-### Step 4 - Open a Pull Request
+</details>
+
+### Step 3 - Open a Pull Request
 
 Go back to the **original** repository (not your fork) and open a Pull Request from your fork's `main` branch.
 
 The PR description will auto-fill with a checklist - complete every item and submit. The organizer will review and merge within a few days.
 
-### Step 5 - Get your certificate
+### Step 4 - Get your certificate
 
 After your PR is merged, your certificate is live at:
 
